@@ -54,13 +54,10 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--warm);color:var(--br
 .side-btn .side-icon{font-size:1.2rem}
 .side-btn .side-label{text-align:center;line-height:1.2}
 
-/* ── TOP NOTICE ── */
-.notice{background:var(--coral);color:white;text-align:center;padding:10px 20px;font-size:.78rem;font-weight:600;margin-top:108px}
-.notice span{opacity:.85;margin-right:8px}
-.notice a{color:white;font-weight:700;text-decoration:underline}
+.notice{display:none}
 
 /* ── HERO ── */
-.hero{min-height:90vh;display:flex;align-items:center;background:linear-gradient(160deg,#FFF0E8 0%,var(--warm) 60%);padding:60px 24px;position:relative;overflow:hidden}
+.hero{min-height:90vh;display:flex;align-items:center;background:linear-gradient(160deg,#FFF0E8 0%,var(--warm) 60%);padding:120px 24px 60px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(232,97,74,.08) 0%,transparent 70%);pointer-events:none}
 .hero-inner{max-width:660px;margin:0 auto;width:100%}
 .hero-tag{display:inline-flex;align-items:center;gap:6px;background:white;border:1.5px solid var(--blush);border-radius:50px;padding:6px 16px;font-size:.73rem;font-weight:700;color:var(--coral);margin-bottom:24px}
@@ -246,8 +243,7 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 
 <!-- D-DAY COUNTDOWN BANNER -->
 <div class="dday-bar" id="ddayBar">
-  <span class="dday-title">🚨 10기 · 단 10자리만 · 마지막일 수 있어요</span>
-  <span class="dday-label">오픈까지</span>
+  <span class="dday-label">NEW 30일 챌린지 10기 오픈까지</span>
   <div class="dday-units" id="ddayUnits">
     <div class="dday-unit"><span class="dday-num" id="ddDays">--</span><span class="dday-sub">일</span></div>
     <span class="dday-sep">:</span>
@@ -280,12 +276,6 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
     <span class="side-icon">📸</span>
     <span class="side-label">인스타</span>
   </a>
-</div>
-
-<!-- TOP NOTICE -->
-<div class="notice">
-  <span>🚨 10기 단 10자리 · 이번이 마지막일 수도 있어요 · 7/2 오픈!</span>
-  <a href="https://open.kakao.com/o/s7H2jojh" target="_blank">지금 상담 신청 →</a>
 </div>
 
 <!-- HERO -->
@@ -641,7 +631,7 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 <section class="cta-section">
   <div class="cta-inner">
     <div class="cta-tag">🚨 단 10자리 · 이번이 마지막일 수 있어요</div>
-    <h2 class="cta-title">NEW 30일 챌린지 10기<br><em>6/2 오픈</em></h2>
+    <h2 class="cta-title">NEW 30일 챌린지 10기<br><em>7/2 오픈</em></h2>
     <p class="cta-sub">10기는 딱 10자리만 받아요.<br>지금까지의 챌린지 중 가장 빠르게 마감될 거예요.<br>망설일수록 자리는 줄어듭니다.</p>
     <div class="cta-btns">
       <a href="https://open.kakao.com/o/s7H2jojh" class="btn-white" target="_blank">💬 무료 상담 신청하기</a>
@@ -663,15 +653,15 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 <!-- STICKY BOTTOM BANNER -->
 <div class="sticky-banner" id="stickyBanner">
   <div class="sb-text">
-    <strong>🚨 10기 단 10자리 · 마지막일 수 있어요</strong>
-    6/2 오픈 · 자리는 정말 빨리 사라집니다
+    <strong>🌸 NEW 30일챌린지</strong>
+    빨리 마감됩니다
   </div>
   <a href="https://open.kakao.com/o/s7H2jojh" class="sb-btn" target="_blank">지금 신청 →</a>
   <button class="sb-close" onclick="document.getElementById('stickyBanner').style.display='none'">×</button>
 </div>
 
 <script>
-// D-Day 카운트다운 (7월 2일 12:00 KST)
+// D-Day 카운트다운 (6월 2일 12:00 KST)
 (function(){
   const target = new Date('2026-06-02T12:00:00+09:00').getTime();
   function pad(n){return String(n).padStart(2,'0')}
@@ -680,7 +670,7 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
     const diff = target - now;
     if(diff <= 0){
       document.getElementById('ddayBar').innerHTML =
-        '<span class="dday-open">🎉 10기 오픈! 단 10자리 · 지금 바로 신청하세요</span>';
+        '<span class="dday-open">🌸 지금부터 NEW 30일챌린지 10기 진행중입니다</span>';
       return;
     }
     const d = Math.floor(diff/86400000);
