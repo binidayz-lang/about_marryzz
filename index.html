@@ -241,18 +241,9 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 </head>
 <body>
 
-<!-- D-DAY COUNTDOWN BANNER -->
+<!-- PROGRESS BANNER -->
 <div class="dday-bar" id="ddayBar">
-  <span class="dday-label">NEW 30일 챌린지 10기 오픈까지</span>
-  <div class="dday-units" id="ddayUnits">
-    <div class="dday-unit"><span class="dday-num" id="ddDays">--</span><span class="dday-sub">일</span></div>
-    <span class="dday-sep">:</span>
-    <div class="dday-unit"><span class="dday-num" id="ddHours">--</span><span class="dday-sub">시간</span></div>
-    <span class="dday-sep">:</span>
-    <div class="dday-unit"><span class="dday-num" id="ddMins">--</span><span class="dday-sub">분</span></div>
-    <span class="dday-sep">:</span>
-    <div class="dday-unit"><span class="dday-num" id="ddSecs">--</span><span class="dday-sub">초</span></div>
-  </div>
+  <span class="dday-open">🌸 NEW 30일챌린지 10기 지금 진행중입니다</span>
 </div>
 
 
@@ -630,8 +621,8 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 <!-- CTA -->
 <section class="cta-section">
   <div class="cta-inner">
-    <div class="cta-tag">🚨 단 10자리 · 이번이 마지막일 수 있어요</div>
-    <h2 class="cta-title">NEW 30일 챌린지 10기<br><em>7/2 오픈</em></h2>
+    <div class="cta-tag">🔥 단 10자리 · 지금 진행중입니다</div>
+    <h2 class="cta-title">NEW 30일 챌린지 10기<br><em>지금 진행중!</em></h2>
     <p class="cta-sub">10기는 딱 10자리만 받아요.<br>지금까지의 챌린지 중 가장 빠르게 마감될 거예요.<br>망설일수록 자리는 줄어듭니다.</p>
     <div class="cta-btns">
       <a href="https://open.kakao.com/o/s7H2jojh" class="btn-white" target="_blank">💬 무료 상담 신청하기</a>
@@ -661,30 +652,7 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 </div>
 
 <script>
-// D-Day 카운트다운 (6월 2일 12:00 KST)
-(function(){
-  const target = new Date('2026-06-02T12:00:00+09:00').getTime();
-  function pad(n){return String(n).padStart(2,'0')}
-  function tick(){
-    const now = Date.now();
-    const diff = target - now;
-    if(diff <= 0){
-      document.getElementById('ddayBar').innerHTML =
-        '<span class="dday-open">🌸 지금부터 NEW 30일챌린지 10기 진행중입니다</span>';
-      return;
-    }
-    const d = Math.floor(diff/86400000);
-    const h = Math.floor((diff%86400000)/3600000);
-    const m = Math.floor((diff%3600000)/60000);
-    const s = Math.floor((diff%60000)/1000);
-    document.getElementById('ddDays').textContent = d;
-    document.getElementById('ddHours').textContent = pad(h);
-    document.getElementById('ddMins').textContent = pad(m);
-    document.getElementById('ddSecs').textContent = pad(s);
-  }
-  tick();
-  setInterval(tick, 1000);
-})();
+
 
 
 const observer = new IntersectionObserver((entries) => {
