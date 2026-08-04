@@ -9,17 +9,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --coral: #E8614A;
-  --coral-soft: #FFE8E4;
-  --peach: #FF8C69;
-  --blush: #FFD4C8;
-  --cream: #FFF8F2;
-  --warm: #FFFDF9;
-  --brown: #5C2E00;
-  --mid: #8A5A44;
-  --light: #C49070;
-  --gold: #C8903A;
-  --gold-soft: #FFF3D0;
+  --coral: #264C46;
+  --coral-soft: #E4EDEB;
+  --peach: #C98B6B;
+  --blush: #A9AFB7;
+  --cream: #F7F4EE;
+  --warm: #FAF9F6;
+  --brown: #14243A;
+  --mid: #57626C;
+  --light: #A9AFB7;
+  --gold: #C98B6B;
+  --gold-soft: #F0E4DA;
   --sage: #8BAF8B;
   --sage-soft: #EBF3EB;
 }
@@ -28,28 +28,28 @@ html{scroll-behavior:smooth}
 body{font-family:'Noto Sans KR',sans-serif;background:var(--warm);color:var(--brown);word-break:keep-all;overflow-x:hidden}
 
 /* ── D-DAY COUNTDOWN ── */
-.dday-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:linear-gradient(90deg,#5C2E00 0%,#8A3A10 50%,#5C2E00 100%);color:white;height:52px;display:flex;align-items:center;justify-content:center;gap:16px;padding:0 16px;font-family:'Noto Sans KR',sans-serif}
+.dday-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:linear-gradient(90deg,#14243A 0%,#1D3350 50%,#14243A 100%);color:white;height:52px;display:flex;align-items:center;justify-content:center;gap:16px;padding:0 16px;font-family:'Noto Sans KR',sans-serif}
 .dday-label{font-size:.72rem;font-weight:700;letter-spacing:.06em;opacity:.8;white-space:nowrap}
-.dday-title{font-size:.8rem;font-weight:700;color:#FFD4A8;white-space:nowrap;letter-spacing:-.01em}
+.dday-title{font-size:.8rem;font-weight:700;color:#C98B6B;white-space:nowrap;letter-spacing:-.01em}
 .dday-units{display:flex;align-items:center;gap:6px}
 .dday-unit{display:flex;flex-direction:column;align-items:center;background:rgba(255,255,255,.12);border-radius:8px;padding:4px 10px;min-width:44px}
 .dday-num{font-size:1.05rem;font-weight:900;line-height:1;letter-spacing:-.02em;font-family:'Noto Serif KR',serif}
 .dday-sub{font-size:.55rem;opacity:.75;margin-top:1px;letter-spacing:.03em}
 .dday-sep{font-size:1rem;font-weight:700;opacity:.5;margin-bottom:6px}
-.dday-open{font-size:.85rem;font-weight:700;color:#FFD4A8;animation:pulse 1.5s ease-in-out infinite}
+.dday-open{font-size:.85rem;font-weight:700;color:#C98B6B;animation:pulse 1.5s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
 @media(max-width:420px){.dday-title{display:none}.dday-unit{min-width:36px;padding:3px 7px}.dday-num{font-size:.9rem}}
 
 /* ── NAV ── */
-.nav{position:fixed;top:52px;left:0;right:0;z-index:900;background:rgba(255,253,249,.95);backdrop-filter:blur(12px);border-bottom:1px solid #EDD8CC;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.nav{position:fixed;top:52px;left:0;right:0;z-index:900;background:rgba(255,253,249,.95);backdrop-filter:blur(12px);border-bottom:1px solid #DDE1DD;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{font-family:'Noto Serif KR',serif;font-size:.95rem;font-weight:700;color:var(--brown);text-decoration:none;letter-spacing:-.02em}
 .nav-cta{background:var(--coral);color:white;border:none;border-radius:50px;padding:8px 18px;font-size:.78rem;font-weight:700;cursor:pointer;text-decoration:none;font-family:'Noto Sans KR',sans-serif}
 
 /* ── 오른쪽 사이드 바로가기 ── */
 .side-nav{position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:800;display:flex;flex-direction:column;gap:0}
-.side-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;width:56px;padding:12px 6px;background:white;border-left:3px solid var(--coral);border-top:1px solid #EDD8CC;border-bottom:none;text-decoration:none;color:var(--brown);font-size:.58rem;font-weight:700;gap:4px;transition:all .2s;cursor:pointer}
+.side-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;width:56px;padding:12px 6px;background:white;border-left:3px solid var(--coral);border-top:1px solid #DDE1DD;border-bottom:none;text-decoration:none;color:var(--brown);font-size:.58rem;font-weight:700;gap:4px;transition:all .2s;cursor:pointer}
 .side-btn:first-child{border-radius:12px 0 0 0}
-.side-btn:last-child{border-radius:0 0 0 12px;border-bottom:1px solid #EDD8CC}
+.side-btn:last-child{border-radius:0 0 0 12px;border-bottom:1px solid #DDE1DD}
 .side-btn:hover{background:var(--coral);color:white;width:68px}
 .side-btn .side-icon{font-size:1.2rem}
 .side-btn .side-label{text-align:center;line-height:1.2}
@@ -57,8 +57,8 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--warm);color:var(--br
 .notice{display:none}
 
 /* ── HERO ── */
-.hero{min-height:90vh;display:flex;align-items:center;background:linear-gradient(160deg,#FFF0E8 0%,var(--warm) 60%);padding:120px 24px 60px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(232,97,74,.08) 0%,transparent 70%);pointer-events:none}
+.hero{min-height:90vh;display:flex;align-items:center;background:linear-gradient(160deg,#EEF1EF 0%,var(--warm) 60%);padding:120px 24px 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(38,76,70,.08) 0%,transparent 70%);pointer-events:none}
 .hero-inner{max-width:660px;margin:0 auto;width:100%}
 .hero-tag{display:inline-flex;align-items:center;gap:6px;background:white;border:1.5px solid var(--blush);border-radius:50px;padding:6px 16px;font-size:.73rem;font-weight:700;color:var(--coral);margin-bottom:24px}
 .hero-title{font-family:'Noto Serif KR',serif;font-size:clamp(1.8rem,5.5vw,2.8rem);font-weight:900;line-height:1.25;color:var(--brown);margin-bottom:16px;letter-spacing:-.04em}
@@ -67,7 +67,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--warm);color:var(--br
 .hero-sub strong{color:var(--brown)}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px}
 .btn-primary{background:var(--coral);color:white;border:none;border-radius:50px;padding:14px 28px;font-size:.88rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;font-family:'Noto Sans KR',sans-serif}
-.btn-outline{background:white;color:var(--brown);border:1.5px solid #DCC8B8;border-radius:50px;padding:13px 24px;font-size:.85rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;font-family:'Noto Sans KR',sans-serif}
+.btn-outline{background:white;color:var(--brown);border:1.5px solid #C9CFCB;border-radius:50px;padding:13px 24px;font-size:.85rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;font-family:'Noto Sans KR',sans-serif}
 .hero-stats{display:flex;gap:28px;flex-wrap:wrap}
 .stat-item{text-align:left}
 .stat-num{font-family:'Noto Serif KR',serif;font-size:1.6rem;font-weight:900;color:var(--coral);line-height:1}
@@ -77,8 +77,8 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--warm);color:var(--br
 .profile-section{background:white;padding:64px 24px}
 .profile-inner{max-width:660px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
 .profile-photo-wrap{position:relative}
-.profile-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;border-radius:20px;box-shadow:0 20px 60px rgba(92,46,0,.15)}
-.profile-badge{position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);background:var(--coral);color:white;border-radius:50px;padding:8px 20px;font-size:.75rem;font-weight:700;white-space:nowrap;box-shadow:0 4px 16px rgba(232,97,74,.4)}
+.profile-photo{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;border-radius:20px;box-shadow:0 20px 60px rgba(20,36,58,.15)}
+.profile-badge{position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);background:var(--coral);color:white;border-radius:50px;padding:8px 20px;font-size:.75rem;font-weight:700;white-space:nowrap;box-shadow:0 4px 16px rgba(38,76,70,.4)}
 .profile-text{}
 .sec-tag{display:inline-block;font-size:.68rem;font-weight:700;padding:4px 12px;border-radius:50px;background:var(--coral-soft);color:var(--coral);margin-bottom:14px;letter-spacing:.04em}
 .sec-title{font-family:'Noto Serif KR',serif;font-size:clamp(1.5rem,3.5vw,2rem);font-weight:900;line-height:1.3;color:var(--brown);margin-bottom:16px;letter-spacing:-.03em}
@@ -92,35 +92,35 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--warm);color:var(--br
 .career-content{}
 .career-title{font-size:.82rem;font-weight:700;color:var(--brown)}
 .career-sub{font-size:.73rem;color:var(--light);margin-top:2px}
-.quote-box{background:linear-gradient(135deg,var(--coral-soft),#FFE8DC);border-radius:16px;padding:20px;margin-top:20px;border-left:4px solid var(--coral)}
+.quote-box{background:linear-gradient(135deg,var(--coral-soft),#DCE7E3);border-radius:16px;padding:20px;margin-top:20px;border-left:4px solid var(--coral)}
 .quote-text{font-family:'Noto Serif KR',serif;font-size:.88rem;color:var(--brown);line-height:1.85;font-style:italic}
 
 /* ── EDUCATION ── */
 .edu-section{background:var(--cream);padding:64px 24px}
 .edu-inner{max-width:660px;margin:0 auto}
 .edu-grid{display:grid;gap:16px;margin-top:32px}
-.edu-card{background:white;border-radius:20px;padding:24px;border:1.5px solid #EDD8CC;display:flex;gap:16px;align-items:flex-start;transition:transform .2s,box-shadow .2s}
-.edu-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(92,46,0,.08)}
+.edu-card{background:white;border-radius:20px;padding:24px;border:1.5px solid #DDE1DD;display:flex;gap:16px;align-items:flex-start;transition:transform .2s,box-shadow .2s}
+.edu-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(20,36,58,.08)}
 .edu-icon{width:52px;height:52px;border-radius:16px;background:var(--coral-soft);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
 .edu-content{}
 .edu-title{font-size:.95rem;font-weight:700;color:var(--brown);margin-bottom:6px}
 .edu-desc{font-size:.8rem;color:var(--mid);line-height:1.75;margin-bottom:10px}
 .edu-tags{display:flex;flex-wrap:wrap;gap:6px}
-.edu-tag{font-size:.68rem;background:var(--cream);color:var(--mid);border-radius:50px;padding:3px 10px;border:1px solid #DDD0C8}
+.edu-tag{font-size:.68rem;background:var(--cream);color:var(--mid);border-radius:50px;padding:3px 10px;border:1px solid #D6DAD3}
 .edu-tag.hot{background:var(--coral);color:white;border-color:var(--coral)}
 
 /* ── INFLZ 활동분야 ── */
 .inflz-section{background:white;padding:64px 24px}
 .inflz-inner{max-width:660px;margin:0 auto}
 .inflz-grid{display:grid;gap:14px;margin-top:32px}
-.inflz-card{background:var(--cream);border-radius:20px;padding:22px;border:1.5px solid #EDD8CC;position:relative;overflow:hidden;transition:transform .2s}
+.inflz-card{background:var(--cream);border-radius:20px;padding:22px;border:1.5px solid #DDE1DD;position:relative;overflow:hidden;transition:transform .2s}
 .inflz-card:hover{transform:translateX(6px)}
 .inflz-card::before{content:'';position:absolute;left:0;top:0;width:4px;height:100%;border-radius:0}
-.c1::before{background:linear-gradient(180deg,#E8614A,#FF8C69)}
+.c1::before{background:linear-gradient(180deg,#264C46,#3E6960)}
 .c2::before{background:linear-gradient(180deg,#5BB890,#A8E6CF)}
 .c3::before{background:linear-gradient(180deg,#C8903A,#FFD93D)}
 .c4::before{background:linear-gradient(180deg,#7070D0,#B0B0F0)}
-.c5::before{background:linear-gradient(180deg,#E8614A,#C8903A)}
+.c5::before{background:linear-gradient(180deg,#264C46,#57626C)}
 .inflz-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .inflz-num{width:30px;height:30px;border-radius:8px;background:var(--coral);color:white;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center}
 .inflz-title{font-size:.92rem;font-weight:700;color:var(--brown)}
@@ -148,8 +148,8 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--warm);color:var(--br
 .reviews-section{background:var(--cream);padding:64px 24px}
 .reviews-inner{max-width:660px;margin:0 auto}
 .reviews-grid{display:grid;gap:14px;margin-top:32px}
-.review-card{background:white;border-radius:20px;padding:22px;border:1.5px solid #EDD8CC;text-decoration:none;display:block;transition:transform .2s,box-shadow .2s;color:inherit}
-.review-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(92,46,0,.1)}
+.review-card{background:white;border-radius:20px;padding:22px;border:1.5px solid #DDE1DD;text-decoration:none;display:block;transition:transform .2s,box-shadow .2s;color:inherit}
+.review-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(20,36,58,.1)}
 .rv-stars{color:var(--coral);font-size:.85rem;margin-bottom:8px}
 .rv-text{font-size:.83rem;color:var(--mid);line-height:1.85;margin-bottom:12px;font-style:italic}
 .rv-footer{display:flex;align-items:center;justify-content:space-between}
@@ -157,7 +157,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--warm);color:var(--br
 .rv-link{font-size:.72rem;color:var(--coral);font-weight:700}
 
 /* ── CTA ── */
-.cta-section{background:linear-gradient(160deg,var(--brown),#3A1800);padding:80px 24px;text-align:center}
+.cta-section{background:linear-gradient(160deg,var(--brown),#0A1420);padding:80px 24px;text-align:center}
 .cta-inner{max-width:560px;margin:0 auto}
 .cta-tag{display:inline-block;background:rgba(255,255,255,.15);color:white;border-radius:50px;padding:5px 16px;font-size:.72rem;font-weight:700;margin-bottom:20px;border:1px solid rgba(255,255,255,.25)}
 .cta-title{font-family:'Noto Serif KR',serif;font-size:clamp(1.6rem,4vw,2.2rem);font-weight:900;color:white;margin-bottom:12px;line-height:1.3}
@@ -168,7 +168,7 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--warm);color:var(--br
 .btn-ghost{background:transparent;color:white;border:1.5px solid rgba(255,255,255,.5);border-radius:50px;padding:14px 24px;font-size:.85rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;font-family:'Noto Sans KR',sans-serif}
 
 /* ── FOOTER ── */
-footer{background:#1A0A00;padding:36px 24px;text-align:center}
+footer{background:#0A121D;padding:36px 24px;text-align:center}
 footer .ft-logo{font-family:'Noto Serif KR',serif;font-size:1rem;font-weight:700;color:rgba(255,255,255,.6);margin-bottom:12px}
 footer .ft-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-bottom:12px}
 footer .ft-links a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.75rem}
@@ -202,12 +202,12 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 .timeline::before{content:'';position:absolute;left:28px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--coral),var(--blush));opacity:.3}
 .tl-item{display:flex;gap:20px;align-items:flex-start;padding-bottom:32px;position:relative}
 .tl-item:last-child{padding-bottom:0}
-.tl-icon{width:56px;height:56px;border-radius:16px;background:var(--coral-soft);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;position:relative;z-index:1;border:2px solid white;box-shadow:0 4px 16px rgba(232,97,74,.15)}
+.tl-icon{width:56px;height:56px;border-radius:16px;background:var(--coral-soft);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;position:relative;z-index:1;border:2px solid white;box-shadow:0 4px 16px rgba(38,76,70,.15)}
 .tl-content{}
 .tl-label{font-size:.68rem;font-weight:700;color:var(--coral);margin-bottom:4px;letter-spacing:.04em}
 .tl-title{font-family:'Noto Serif KR',serif;font-size:1rem;font-weight:700;color:var(--brown);margin-bottom:6px}
 .tl-desc{font-size:.8rem;color:var(--mid);line-height:1.8}
-.story-quote{background:linear-gradient(135deg,var(--brown),#3A1800);border-radius:20px;padding:28px;margin-top:32px;text-align:center}
+.story-quote{background:linear-gradient(135deg,var(--brown),#0A1420);border-radius:20px;padding:28px;margin-top:32px;text-align:center}
 .story-quote p{font-family:'Noto Serif KR',serif;font-size:.9rem;color:white;line-height:2;margin-bottom:12px}
 .story-quote cite{font-size:.73rem;color:rgba(255,255,255,.6);font-style:normal}
 
@@ -215,8 +215,8 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 .field-section{background:var(--cream);padding:64px 24px}
 .field-inner{max-width:660px;margin:0 auto}
 .field-grid{display:grid;gap:16px;margin-top:32px}
-.field-card{background:white;border-radius:20px;padding:24px;border:1.5px solid #EDD8CC;display:flex;gap:16px;align-items:flex-start;transition:transform .2s}
-.field-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(92,46,0,.08)}
+.field-card{background:white;border-radius:20px;padding:24px;border:1.5px solid #DDE1DD;display:flex;gap:16px;align-items:flex-start;transition:transform .2s}
+.field-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(20,36,58,.08)}
 .field-icon{width:52px;height:52px;border-radius:16px;background:var(--coral-soft);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
 .field-content{}
 .field-title{font-size:.92rem;font-weight:700;color:var(--brown);margin-bottom:6px}
@@ -243,7 +243,7 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 
 <!-- PROGRESS BANNER -->
 <div class="dday-bar" id="ddayBar">
-  <span class="dday-open">🌸 마지막 12기 · NEW 30일챌린지 지금 모집중입니다</span>
+  <span class="dday-open" id="ddayText">🌸 SELLZ UP 1기 · 8월 3일 오픈 예정</span>
 </div>
 
 
@@ -347,7 +347,7 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
   <div class="edu-inner">
     <div class="sec-tag reveal">Education</div>
     <h2 class="sec-title reveal">어떤 교육을 하나요?</h2>
-    <p class="reveal" style="font-size:.85rem;color:var(--mid);margin-bottom:4px">오프라인 · 줌 · 챌린지까지, 나에게 맞는 방식으로 시작하세요.</p>
+    <p class="reveal" style="font-size:.85rem;color:var(--mid);margin-bottom:4px">오프라인 · 줌 · SELLZ UP까지, 나에게 맞는 방식으로 시작하세요.</p>
     <div class="edu-grid">
       <div class="edu-card reveal">
         <div class="edu-icon">🏢</div>
@@ -375,12 +375,10 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
       <div class="edu-card reveal">
         <div class="edu-icon">🔥</div>
         <div class="edu-content">
-          <div class="edu-title">챌린지형 교육</div>
-          <div class="edu-desc">100일 챌린지, 더블업 솔루션, 30일 창업 챌린지까지. 매일 성장하는 구조의 집중 프로그램.</div>
+          <div class="edu-title">"SELLZ UP" 교육프로그램</div>
+          <div class="edu-desc">기존 챌린지 교육을 바탕으로 재탄생한 교육방식으로, 구조화된 집중 프로그램입니다.</div>
           <div class="edu-tags">
-            <span class="edu-tag">100일 챌린지</span>
-            <span class="edu-tag">더블업 솔루션 17기</span>
-            <span class="edu-tag hot">NEW 30일 챌린지 마지막 12기 · 10자리</span>
+            <span class="edu-tag hot">SELLZ UP 1기 · 8월 3일 오픈</span>
           </div>
         </div>
       </div>
@@ -621,9 +619,9 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 <!-- CTA -->
 <section class="cta-section">
   <div class="cta-inner">
-    <div class="cta-tag">🔥 이 이름으로 만나는 마지막 기수</div>
-    <h2 class="cta-title">NEW 30일 챌린지 <em>마지막 12기</em></h2>
-    <p class="cta-sub">'NEW 30일 챌린지'라는 이름으로 만나는 건 12기가 마지막입니다.<br>딱 10자리, 이 이름의 마지막 문을 지금 엽니다.<br>망설일수록 자리는 줄어듭니다.</p>
+    <div class="cta-tag">🌸 새로운 시즌, 새로운 이름</div>
+    <h2 class="cta-title">SELLZ UP <em>1기 오픈</em></h2>
+    <p class="cta-sub">인플즈메리와 함께한 9년의 노하우를 그대로 담아<br>새 이름 'SELLZ UP'으로 첫 시즌을 엽니다.<br>8월 3일, 가장 구조화된 커리큘럼으로 시작합니다.</p>
     <div class="cta-btns">
       <a href="https://open.kakao.com/o/s7H2jojh" class="btn-white" target="_blank">💬 무료 상담 신청하기</a>
     </div>
@@ -644,8 +642,8 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 <!-- STICKY BOTTOM BANNER -->
 <div class="sticky-banner" id="stickyBanner">
   <div class="sb-text">
-    <strong>🌸 NEW 30일챌린지</strong>
-    빨리 마감됩니다
+    <strong>🌸 SELLZ UP 1기</strong>
+    8월 3일 오픈, 지금 상담하세요
   </div>
   <a href="https://open.kakao.com/o/s7H2jojh" class="sb-btn" target="_blank">지금 신청 →</a>
   <button class="sb-close" onclick="document.getElementById('stickyBanner').style.display='none'">×</button>
@@ -653,6 +651,14 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 
 <script>
 
+// SELLZ UP 오픈일 도달 여부에 따라 배너 문구 자동 전환
+(function() {
+  const openDate = new Date('2026-08-03T09:00:00+09:00');
+  const ddayEl = document.getElementById('ddayText');
+  if (ddayEl && new Date() >= openDate) {
+    ddayEl.textContent = '🌸 SELLZ UP 1기 · 8월 3일 오픈';
+  }
+})();
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
