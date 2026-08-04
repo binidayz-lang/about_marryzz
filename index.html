@@ -27,6 +27,32 @@
 html{scroll-behavior:smooth}
 body{font-family:'Noto Sans KR',sans-serif;background:var(--warm);color:var(--brown);word-break:keep-all;overflow-x:hidden}
 
+/* ── INTRO OVERLAY ── */
+.intro-overlay{
+  position:fixed; inset:0; z-index:2000;
+  background:radial-gradient(circle at 50% 40%, #1D3350 0%, var(--brown) 70%);
+  display:flex; align-items:center; justify-content:center;
+  padding:24px; text-align:center; cursor:pointer;
+  transition:opacity .6s ease, visibility .6s ease;
+}
+.intro-overlay.intro-hidden{ opacity:0; visibility:hidden; pointer-events:none; }
+.intro-text{
+  font-family:'Noto Serif KR',serif;
+  font-weight:900;
+  font-size:clamp(1.5rem, 7vw, 2.2rem);
+  line-height:1.5;
+  color:#FBF6EE;
+  letter-spacing:-.02em;
+  animation:introFadeUp 1s ease both;
+}
+.intro-text span{color:var(--peach)}
+.intro-hint{
+  position:absolute; bottom:40px; left:0; right:0;
+  font-size:.72rem; color:rgba(251,246,238,.5);
+  letter-spacing:.08em; animation:introFadeUp 1s ease .3s both;
+}
+@keyframes introFadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
 /* ── D-DAY COUNTDOWN ── */
 .dday-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:linear-gradient(90deg,#14243A 0%,#1D3350 50%,#14243A 100%);color:white;height:52px;display:flex;align-items:center;justify-content:center;gap:16px;padding:0 16px;font-family:'Noto Sans KR',sans-serif}
 .dday-label{font-size:.72rem;font-weight:700;letter-spacing:.06em;opacity:.8;white-space:nowrap}
@@ -61,6 +87,16 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--warm);color:var(--br
 .hero::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(38,76,70,.08) 0%,transparent 70%);pointer-events:none}
 .hero-inner{max-width:660px;margin:0 auto;width:100%}
 .hero-tag{display:inline-flex;align-items:center;gap:6px;background:white;border:1.5px solid var(--blush);border-radius:50px;padding:6px 16px;font-size:.73rem;font-weight:700;color:var(--coral);margin-bottom:24px}
+.hero-hook{
+  font-family:'Noto Serif KR',serif;
+  font-weight:700;
+  font-size:clamp(1.15rem,3.2vw,1.45rem);
+  color:var(--mid);
+  line-height:1.5;
+  margin-bottom:18px;
+  letter-spacing:-.02em;
+}
+.hero-hook em{color:var(--coral);font-style:normal}
 .hero-title{font-family:'Noto Serif KR',serif;font-size:clamp(1.8rem,5.5vw,2.8rem);font-weight:900;line-height:1.25;color:var(--brown);margin-bottom:16px;letter-spacing:-.04em}
 .hero-title em{color:var(--coral);font-style:normal}
 .hero-sub{font-size:clamp(.9rem,2.5vw,1rem);color:var(--mid);line-height:1.85;margin-bottom:32px}
@@ -243,6 +279,12 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 </head>
 <body>
 
+<!-- INTRO OVERLAY -->
+<div class="intro-overlay" id="introOverlay">
+  <div class="intro-text">당신의 이름,<br>마지막으로 <em>불린 게</em><br>언제인가요?</div>
+  <div class="intro-hint">TAP TO CONTINUE</div>
+</div>
+
 <!-- PROGRESS BANNER -->
 <div class="dday-bar" id="ddayBar">
   <span class="dday-open" id="ddayText">🌸 SELLZ UP 1기 · 8월 3일 오픈 예정</span>
@@ -279,6 +321,7 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-tag reveal">인플즈 대표강사 · 온라인 9년차</div>
+    <p class="hero-hook reveal">당신의 이름, <em>마지막으로 불린 게</em><br>언제인가요?</p>
     <h1 class="hero-title reveal">누구 엄마가 아닌<br><em>메리 강사</em>로<br>불리는 삶</h1>
     <p class="hero-sub reveal">
       예비맘 시절 시작한 온라인 부업이<br>
@@ -657,6 +700,15 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 </div>
 
 <script>
+
+// 인트로 오버레이: 2.2초 후 자동으로 사라지거나, 탭하면 바로 사라짐
+(function() {
+  const intro = document.getElementById('introOverlay');
+  if (!intro) return;
+  function hideIntro() { intro.classList.add('intro-hidden'); }
+  intro.addEventListener('click', hideIntro);
+  setTimeout(hideIntro, 2200);
+})();
 
 // SELLZ UP 오픈일 도달 여부에 따라 배너 문구 자동 전환
 (function() {
