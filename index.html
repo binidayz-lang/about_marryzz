@@ -27,31 +27,48 @@
 html{scroll-behavior:smooth}
 body{font-family:'Noto Sans KR',sans-serif;background:var(--warm);color:var(--brown);word-break:keep-all;overflow-x:hidden}
 
-/* ── INTRO OVERLAY ── */
+/* ── INTRO POPUP (쇼핑몰 스타일) ── */
 .intro-overlay{
   position:fixed; inset:0; z-index:2000;
-  background:radial-gradient(circle at 50% 40%, #1D3350 0%, var(--brown) 70%);
+  background:rgba(20,36,58,.45);
   display:flex; align-items:center; justify-content:center;
-  padding:24px; text-align:center; cursor:pointer;
-  transition:opacity .6s ease, visibility .6s ease;
+  padding:24px;
+  transition:opacity .4s ease, visibility .4s ease;
 }
 .intro-overlay.intro-hidden{ opacity:0; visibility:hidden; pointer-events:none; }
+.intro-card{
+  position:relative;
+  background:var(--warm);
+  border-radius:18px;
+  padding:32px 26px 26px;
+  max-width:280px;
+  width:100%;
+  text-align:center;
+  box-shadow:0 20px 60px rgba(20,36,58,.35);
+  animation:introPopIn .35s cubic-bezier(.2,.9,.3,1.2) both;
+}
+@keyframes introPopIn{from{opacity:0;transform:scale(.92) translateY(10px)}to{opacity:1;transform:none}}
+.intro-close{
+  position:absolute; top:10px; right:12px;
+  background:none; border:none; font-size:1.1rem;
+  color:var(--light); cursor:pointer; line-height:1; padding:4px;
+}
 .intro-text{
   font-family:'Noto Serif KR',serif;
   font-weight:900;
-  font-size:clamp(1.5rem, 7vw, 2.2rem);
-  line-height:1.5;
-  color:#FBF6EE;
+  font-size:1.15rem;
+  line-height:1.55;
+  color:var(--brown);
   letter-spacing:-.02em;
-  animation:introFadeUp 1s ease both;
 }
-.intro-text span{color:var(--peach)}
+.intro-text em{color:var(--coral);font-style:normal}
 .intro-hint{
-  position:absolute; bottom:40px; left:0; right:0;
-  font-size:.72rem; color:rgba(251,246,238,.5);
-  letter-spacing:.08em; animation:introFadeUp 1s ease .3s both;
+  margin-top:16px;
+  font-size:.68rem;
+  font-weight:700;
+  color:var(--coral);
+  letter-spacing:.06em;
 }
-@keyframes introFadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 
 /* ── D-DAY COUNTDOWN ── */
 .dday-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:linear-gradient(90deg,#14243A 0%,#1D3350 50%,#14243A 100%);color:white;height:52px;display:flex;align-items:center;justify-content:center;gap:16px;padding:0 16px;font-family:'Noto Sans KR',sans-serif}
@@ -279,10 +296,13 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 </head>
 <body>
 
-<!-- INTRO OVERLAY -->
+<!-- INTRO POPUP -->
 <div class="intro-overlay" id="introOverlay">
-  <div class="intro-text">당신의 이름,<br>마지막으로 <em>불린 게</em><br>언제인가요?</div>
-  <div class="intro-hint">TAP TO CONTINUE</div>
+  <div class="intro-card">
+    <button class="intro-close" id="introClose" aria-label="닫기">✕</button>
+    <div class="intro-text">당신의 이름,<br>마지막으로 <em>불린 게</em><br>언제인가요?</div>
+    <div class="intro-hint">아래로 스크롤해서 확인하기</div>
+  </div>
 </div>
 
 <!-- PROGRESS BANNER -->
@@ -402,10 +422,10 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
         <div class="edu-icon">🏢</div>
         <div class="edu-content">
           <div class="edu-title">오프라인 교육</div>
-          <div class="edu-desc">실제 교육센터에서 매주 진행되는 현장 강의. 1,000회 이상 진행된 검증된 교육으로 매달 정시 마감될 정도로 인기 있는 클래스입니다.</div>
+          <div class="edu-desc">실제 교육센터에서 매주 진행되는 현장 강의. 1,000회 이상 진행된 검증된 교육입니다.</div>
           <div class="edu-tags">
             <span class="edu-tag">실제 교육센터 · 매주 진행</span>
-            <span class="edu-tag">1,000회 이상 · 정시 마감</span>
+            <span class="edu-tag">1,000회 이상</span>
           </div>
         </div>
       </div>
@@ -701,13 +721,17 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 
 <script>
 
-// 인트로 오버레이: 2.2초 후 자동으로 사라지거나, 탭하면 바로 사라짐
+// 인트로 팝업: X 버튼 또는 바깥 영역 클릭 시 닫힘, 6초 뒤 자동으로도 닫힘
 (function() {
   const intro = document.getElementById('introOverlay');
+  const closeBtn = document.getElementById('introClose');
   if (!intro) return;
   function hideIntro() { intro.classList.add('intro-hidden'); }
-  intro.addEventListener('click', hideIntro);
-  setTimeout(hideIntro, 2200);
+  closeBtn.addEventListener('click', hideIntro);
+  intro.addEventListener('click', function(e){
+    if (e.target === intro) hideIntro();
+  });
+  setTimeout(hideIntro, 6000);
 })();
 
 // SELLZ UP 오픈일 도달 여부에 따라 배너 문구 자동 전환
