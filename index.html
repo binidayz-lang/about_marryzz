@@ -27,49 +27,6 @@
 html{scroll-behavior:smooth}
 body{font-family:'Noto Sans KR',sans-serif;background:var(--warm);color:var(--brown);word-break:keep-all;overflow-x:hidden}
 
-/* ── INTRO POPUP (쇼핑몰 스타일) ── */
-.intro-overlay{
-  position:fixed; inset:0; z-index:2000;
-  background:rgba(20,36,58,.45);
-  display:flex; align-items:center; justify-content:center;
-  padding:24px;
-  transition:opacity .4s ease, visibility .4s ease;
-}
-.intro-overlay.intro-hidden{ opacity:0; visibility:hidden; pointer-events:none; }
-.intro-card{
-  position:relative;
-  background:var(--warm);
-  border-radius:18px;
-  padding:32px 26px 26px;
-  max-width:280px;
-  width:100%;
-  text-align:center;
-  box-shadow:0 20px 60px rgba(20,36,58,.35);
-  animation:introPopIn .35s cubic-bezier(.2,.9,.3,1.2) both;
-}
-@keyframes introPopIn{from{opacity:0;transform:scale(.92) translateY(10px)}to{opacity:1;transform:none}}
-.intro-close{
-  position:absolute; top:10px; right:12px;
-  background:none; border:none; font-size:1.1rem;
-  color:var(--light); cursor:pointer; line-height:1; padding:4px;
-}
-.intro-text{
-  font-family:'Noto Serif KR',serif;
-  font-weight:900;
-  font-size:1.15rem;
-  line-height:1.55;
-  color:var(--brown);
-  letter-spacing:-.02em;
-}
-.intro-text em{color:var(--coral);font-style:normal}
-.intro-hint{
-  margin-top:16px;
-  font-size:.68rem;
-  font-weight:700;
-  color:var(--coral);
-  letter-spacing:.06em;
-}
-
 /* ── D-DAY COUNTDOWN ── */
 .dday-bar{position:fixed;top:0;left:0;right:0;z-index:1000;background:linear-gradient(90deg,#14243A 0%,#1D3350 50%,#14243A 100%);color:white;height:52px;display:flex;align-items:center;justify-content:center;gap:16px;padding:0 16px;font-family:'Noto Sans KR',sans-serif}
 .dday-label{font-size:.72rem;font-weight:700;letter-spacing:.06em;opacity:.8;white-space:nowrap}
@@ -296,18 +253,9 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 </head>
 <body>
 
-<!-- INTRO POPUP -->
-<div class="intro-overlay" id="introOverlay">
-  <div class="intro-card">
-    <button class="intro-close" id="introClose" aria-label="닫기">✕</button>
-    <div class="intro-text">당신의 이름,<br>마지막으로 <em>불린 게</em><br>언제인가요?</div>
-    <div class="intro-hint">아래로 스크롤해서 확인하기</div>
-  </div>
-</div>
-
 <!-- PROGRESS BANNER -->
 <div class="dday-bar" id="ddayBar">
-  <span class="dday-open" id="ddayText">🌸 SELLZ UP 1기 · 8월 3일 오픈 예정</span>
+  <span class="dday-open" id="ddayText">🌸 SELLZ UP 2기 · 8월 24일 오전 9시 오픈</span>
 </div>
 
 
@@ -447,7 +395,7 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
           <div class="edu-title">"SELLZ UP" 교육프로그램</div>
           <div class="edu-desc">기존 챌린지 교육을 바탕으로 재탄생한 교육방식으로, 구조화된 집중 프로그램입니다.</div>
           <div class="edu-tags">
-            <span class="edu-tag hot">SELLZ UP 1기 · 8월 3일 오픈</span>
+            <span class="edu-tag hot">SELLZ UP 2기 · 8월 24일 오전 9시 오픈</span>
             <a href="https://binidayz-lang.github.io/newproject/" class="edu-tag-link" target="_blank">SELLZ UP 바로가기 →</a>
           </div>
         </div>
@@ -689,9 +637,9 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 <!-- CTA -->
 <section class="cta-section">
   <div class="cta-inner">
-    <div class="cta-tag">🌸 새로운 시즌, 새로운 이름</div>
-    <h2 class="cta-title">SELLZ UP <em>1기 오픈</em></h2>
-    <p class="cta-sub">인플즈메리와 함께한 9년의 노하우를 그대로 담아<br>새 이름 'SELLZ UP'으로 첫 시즌을 엽니다.<br>8월 3일, 가장 구조화된 커리큘럼으로 시작합니다.</p>
+    <div class="cta-tag">🌸 SELLZ UP 2기</div>
+    <h2 class="cta-title">SELLZ UP <em>2기 오픈</em></h2>
+    <p class="cta-sub">인플즈메리와 함께한 9년의 노하우를 그대로 담아<br>SELLZ UP 두 번째 시즌을 엽니다.<br>8월 24일 오전 9시, 가장 구조화된 커리큘럼으로 시작합니다.</p>
     <div class="cta-btns">
       <a href="https://open.kakao.com/o/s7H2jojh" class="btn-white" target="_blank">💬 무료 상담 신청하기</a>
     </div>
@@ -712,8 +660,8 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 <!-- STICKY BOTTOM BANNER -->
 <div class="sticky-banner" id="stickyBanner">
   <div class="sb-text">
-    <strong>🌸 SELLZ UP 1기</strong>
-    8월 3일 오픈, 지금 상담하세요
+    <strong>🌸 SELLZ UP 2기</strong>
+    8월 24일 오전 9시 오픈, 지금 상담하세요
   </div>
   <a href="https://open.kakao.com/o/s7H2jojh" class="sb-btn" target="_blank">지금 신청 →</a>
   <button class="sb-close" onclick="document.getElementById('stickyBanner').style.display='none'">×</button>
@@ -721,25 +669,12 @@ footer .ft-copy{font-size:.7rem;color:rgba(255,255,255,.3)}
 
 <script>
 
-// 인트로 팝업: X 버튼 또는 바깥 영역 클릭 시 닫힘, 6초 뒤 자동으로도 닫힘
-(function() {
-  const intro = document.getElementById('introOverlay');
-  const closeBtn = document.getElementById('introClose');
-  if (!intro) return;
-  function hideIntro() { intro.classList.add('intro-hidden'); }
-  closeBtn.addEventListener('click', hideIntro);
-  intro.addEventListener('click', function(e){
-    if (e.target === intro) hideIntro();
-  });
-  setTimeout(hideIntro, 6000);
-})();
-
 // SELLZ UP 오픈일 도달 여부에 따라 배너 문구 자동 전환
 (function() {
-  const openDate = new Date('2026-08-03T09:00:00+09:00');
+  const openDate = new Date('2026-08-24T09:00:00+09:00');
   const ddayEl = document.getElementById('ddayText');
   if (ddayEl && new Date() >= openDate) {
-    ddayEl.textContent = '🌸 SELLZ UP 1기 · 8월 3일 오픈';
+    ddayEl.textContent = '🌸 SELLZ UP 2기 · 8월 24일 오전 9시 오픈';
   }
 })();
 
